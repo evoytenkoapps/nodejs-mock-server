@@ -1,9 +1,10 @@
-import express from "express";
 import bodyParser = require("body-parser");
+import express from "express";
 
 const app = express();
 
 const PORT: number = 8082;
+const HOST = "localhost";
 
 app.use(
   bodyParser.json({
@@ -27,17 +28,15 @@ app.use(
 
 app.use(function (req, res, next) {
   console.log(req.method, req.url);
-  //res.setHeader("access-control-allow-origin", "http://localhost:3000");
-  //res.setHeader("access-control-allow-origin", "http://localhost:63342");
   res.setHeader("access-control-allow-origin", "*");
   next();
 });
 
-app.get("/v2/GetTerminalStatus", (req, res) => {
-  const data = { ErrorCode: "0", Success: true, TerminalStatus: "P" };
+app.get("/data", (req, res) => {
+  const data = { result: "Mock NodeJs Works" };
   res.send(data);
 });
 
-app.listen(PORT, () => {
-  console.log(`The application is listening on port ${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`The application is listening on port ${HOST + ":" + PORT}`);
 });

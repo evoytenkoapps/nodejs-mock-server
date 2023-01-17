@@ -1,7 +1,7 @@
-/.idea/modules.xml
-/.idea/tinkoff-widget-backend.iml
-/.idea/vcs.xml
+.idea
 
 node_modules
 /.idea/prettier.xml
 /.idea/eacq-payment-form- backend.iml
+.idea/workspace.xml
+./.idea/workspace.xml
